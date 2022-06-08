@@ -13,7 +13,7 @@ import static org.springframework.web.reactive.function.server.RequestPredicates
 import static org.springframework.web.reactive.function.server.RouterFunctions.route;
 
 @Configuration
-public class GerProviderRoute {
+public class GetProviderRoute {
     @Bean
     public RouterFunction<ServerResponse> allProviders(GetProviderUseCase getProviderUseCase){
         return route(GET("/v1/api/all-providers"), request -> ServerResponse.ok()
