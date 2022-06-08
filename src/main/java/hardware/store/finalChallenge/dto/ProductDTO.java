@@ -12,7 +12,7 @@ public class ProductDTO {
     private Integer maxUnits;
     private String productName;
     private String description;
-    private String unitsAvailable;
+    private Integer unitsAvailable;
     private Integer price;
     private Provider provider;
 }

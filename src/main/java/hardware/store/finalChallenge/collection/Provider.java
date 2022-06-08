@@ -10,7 +10,7 @@ import java.util.UUID;
 @Document(collection = "provider")
 public class Provider {
     @Id
-    private String id = UUID.randomUUID().toString();
+    private String id;
     private String name;
     private String number;
     private String streetAdress;

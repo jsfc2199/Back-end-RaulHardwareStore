@@ -12,7 +12,7 @@ import java.util.UUID;
 @Document(collection = "bill")
 public class Bill {
     @Id
-    private String id = UUID.randomUUID().toString();
+    private String id;
     private LocalDate date;
     private String clientName;
     private String seller;
