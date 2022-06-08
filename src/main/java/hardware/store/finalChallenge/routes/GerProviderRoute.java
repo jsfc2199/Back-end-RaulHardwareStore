@@ -1,7 +1,7 @@
 package hardware.store.finalChallenge.routes;
 
-import hardware.store.finalChallenge.dto.ProductDTO;
-import hardware.store.finalChallenge.usecases.GetProductUseCase;
+import hardware.store.finalChallenge.dto.ProviderDTO;
+import hardware.store.finalChallenge.usecases.GetProviderUseCase;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.MediaType;
@@ -13,11 +13,11 @@ import static org.springframework.web.reactive.function.server.RequestPredicates
 import static org.springframework.web.reactive.function.server.RouterFunctions.route;
 
 @Configuration
-public class GetProductRoute {
+public class GerProviderRoute {
     @Bean
-    public RouterFunction<ServerResponse> allProducts(GetProductUseCase getProductUseCase){
-        return route(GET("/v1/api/all-products"), request -> ServerResponse.ok()
+    public RouterFunction<ServerResponse> allProviders(GetProviderUseCase getProviderUseCase){
+        return route(GET("/v1/api/all-providers"), request -> ServerResponse.ok()
                 .contentType(MediaType.APPLICATION_JSON)
-                .body(BodyInserters.fromPublisher(getProductUseCase.getProducts(), ProductDTO.class)));
+                .body(BodyInserters.fromPublisher(getProviderUseCase.getProviders(), ProviderDTO.class)));
     }
 }
