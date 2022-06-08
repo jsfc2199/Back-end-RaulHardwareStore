@@ -13,9 +13,9 @@ import java.util.UUID;
 public class Bill {
     @Id
     private String id;
-    private LocalDate date;
     private String clientName;
     private String seller;
+    private LocalDate date;
     private List<Product> productsBought;
     private Double totalPaid;
 }

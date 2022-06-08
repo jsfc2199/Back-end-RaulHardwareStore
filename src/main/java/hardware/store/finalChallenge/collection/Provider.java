@@ -13,5 +13,5 @@ public class Provider {
     private String id;
     private String name;
     private String number;
-    private String streetAdress;
+    private String passport;
 }

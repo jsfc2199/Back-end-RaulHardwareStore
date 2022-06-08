@@ -9,10 +9,10 @@ import java.util.UUID;
 
 @Data
 public class BillDTO {
-    private String id = UUID.randomUUID().toString();
-    private LocalDate date;
+    private String id;
     private String clientName;
     private String seller;
+    private LocalDate date;
     private List<Product> productsBought;
     private Double totalPaid;
 }

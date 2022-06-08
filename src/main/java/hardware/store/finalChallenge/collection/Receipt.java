@@ -13,7 +13,9 @@ import java.util.UUID;
 public class Receipt {
     @Id
     private String id;
-    private String providerName;
-    private List<Product> productsReceived;
+    private String description;
+    private Integer units;
+    private String productId;
     private LocalDate date;
+    private Provider provider;
 }

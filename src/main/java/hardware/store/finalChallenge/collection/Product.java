@@ -20,4 +20,5 @@ public class Product {
     private Integer price;
     private Provider provider;
 
+
 }

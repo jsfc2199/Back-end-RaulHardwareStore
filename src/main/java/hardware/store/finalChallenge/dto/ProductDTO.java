@@ -7,7 +7,7 @@ import java.util.UUID;
 
 @Data
 public class ProductDTO {
-    private String id = UUID.randomUUID().toString();
+    private String id;
     private Integer minUnits;
     private Integer maxUnits;
     private String productName;

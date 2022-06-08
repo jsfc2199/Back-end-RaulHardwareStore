@@ -6,8 +6,8 @@ import java.util.UUID;
 
 @Data
 public class ProviderDTO {
-    private String id = UUID.randomUUID().toString();
+    private String id;
     private String name;
     private String number;
-    private String streetAdress;
+    private String passport;
 }
