@@ -1,16 +1,12 @@
-package hardware.store.finalChallenge.collection;
+package hardware.store.finalChallenge.dto;
 
+import hardware.store.finalChallenge.collection.Provider;
 import lombok.Data;
-import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.util.UUID;
 
 @Data
-@Document(collection = "product")
-public class Product {
-
-    @Id
+public class ProductDTO {
     private String id = UUID.randomUUID().toString();
     private Integer minUnits;
     private Integer maxUnits;
@@ -19,5 +15,4 @@ public class Product {
     private String unitsAvailable;
     private Integer price;
     private Provider provider;
-
 }
