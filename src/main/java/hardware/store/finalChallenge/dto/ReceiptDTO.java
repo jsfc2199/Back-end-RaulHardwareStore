@@ -14,6 +14,6 @@ public class ReceiptDTO {
     private String description;
     private Integer units;
     private String productId;
-    private LocalDate date;
+    private String date;
     private Provider provider;
 }

@@ -19,7 +19,7 @@ public class Bill {
     private String id;
     private String clientName;
     private String seller;
-    private LocalDate date;
+    private String date;
     private List<Product> productsBought;
     private Double totalPaid;
 }
