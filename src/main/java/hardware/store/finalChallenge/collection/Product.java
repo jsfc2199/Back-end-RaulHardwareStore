@@ -1,5 +1,6 @@
 package hardware.store.finalChallenge.collection;
 
+import hardware.store.finalChallenge.dto.ProviderDTO;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -22,7 +23,7 @@ public class Product {
     private String description;
     private Integer unitsAvailable;
     private Integer price;
-    private Provider provider;
+    private ProviderDTO provider;
 
 
 }

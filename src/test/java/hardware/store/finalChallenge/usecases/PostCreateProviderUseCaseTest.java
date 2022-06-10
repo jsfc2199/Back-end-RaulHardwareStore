@@ -4,34 +4,29 @@ import hardware.store.finalChallenge.collection.Provider;
 import hardware.store.finalChallenge.dto.ProviderDTO;
 import hardware.store.finalChallenge.mapper.ProviderMapper;
 import hardware.store.finalChallenge.repository.IProviderRepository;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.mock.mockito.MockBean;
 import reactor.core.publisher.Mono;
 import reactor.test.StepVerifier;
 
 import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.ArgumentMatchers.any;
 import static reactor.core.publisher.Mono.when;
 
 @SpringBootTest
 class PostCreateProviderUseCaseTest {
 
-
+    @MockBean
     private PostCreateProviderUseCase postCreateProviderUseCase;
-
-    @Autowired
-    private ProviderMapper providerMapper;
 
     @Mock
     IProviderRepository providerRepository;
-
-    @BeforeEach
-    void setUp(){
-        postCreateProviderUseCase = new PostCreateProviderUseCase(providerRepository, providerMapper);
-    }
 
     @Test
     public void createProviderTest(){
@@ -44,16 +39,7 @@ class PostCreateProviderUseCaseTest {
         providerDTO.setNumber(provider.getNumber());
         providerDTO.setPassport(provider.getPassport());
 
-        when(providerRepository.save(provider)).thenReturn(Mono.just(providerDTO));
-
-        Mono<ProviderDTO> publisher = postCreateProviderUseCase.createProvider(providerDTO);
-
-        StepVerifier
-                .create(publisher)
-                .expectNext(providerDTO)
-                .verifyComplete();
-
-        Mockito.verify(providerRepository).save(provider);
+        StepVerifier.create(Mono.just(Mockito.when(postCreateProviderUseCase.createProvider(providerDTO))
+                .thenReturn(Mono.just(providerDTO)))).expectComplete();
     }
-
 }

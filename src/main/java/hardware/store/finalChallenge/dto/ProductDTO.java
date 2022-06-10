@@ -14,5 +14,5 @@ public class ProductDTO {
     private String description;
     private Integer unitsAvailable;
     private Integer price;
-    private Provider provider;
+    private ProviderDTO provider;
 }
