@@ -16,7 +16,7 @@ import static org.springframework.web.reactive.function.server.RouterFunctions.r
 public class GetBillRoute {
     @Bean
     public RouterFunction<ServerResponse> allBills(GetBillUseCase getBillUseCase){
-        return route(GET("/v1/api/all-receipts"),request -> ServerResponse.ok()
+        return route(GET("/v1/api/all-bills"),request -> ServerResponse.ok()
                 .contentType(MediaType.APPLICATION_JSON)
                 .body(BodyInserters.fromPublisher(getBillUseCase.getBills(), BillDTO.class)));
     }
